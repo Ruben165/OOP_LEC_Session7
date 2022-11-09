@@ -63,7 +63,14 @@ class Murid extends Persona {
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+		this.status = checkStatus(status);
+	}
+	
+	public String checkStatus(String status) {
+		if(status.equalsIgnoreCase("freshman")||status.equalsIgnoreCase("sophomore")||status.equalsIgnoreCase("junior")||status.equalsIgnoreCase("senior")) {
+			return status;
+		}
+		else return "???";
 	}
 
 	public Murid(String name, String address, String phoneNumber, String email, String status) {
